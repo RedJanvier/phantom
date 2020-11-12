@@ -1,0 +1,14 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Phantom is a web app to resolve the car management service issues",
+    "version": "1.0.0",
+    "title": "Phantom",
+    "contact": {
+      "email": "janvieradobe@gmail.com"
+    }
+  },
+  "basePath": "/api",
+  "schemes": ["http", "https"],
+  "paths": {}
+}
