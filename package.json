@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node -r dotenv/config.js src"
+    "coverage": "NODE_ENV=test nyc npm test",
+    "coveralls": "nyc --report --reporter=text-lcov | coveralls",
+    "test": "NODE_ENV=test mocha src/tests/**.test.js -r @babel/register --exit",
+    "dev": "nodemon --exec babel-node -r dotenv/config.js src",
+    "start": "node -r dotenv/config.js build",
+    "build": "babel src --out-dir build"
   },
   "repository": {
     "type": "git",
@@ -18,21 +23,31 @@
   },
   "homepage": "https://github.com/RedJanvier/phantom#readme",
   "dependencies": {
-    "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "@babel/node": "^7.12.6",
+    "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "express": "^4.17.1",
+    "helmet": "^4.2.0",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.6",
     "swagger-ui-express": "^4.1.4"
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/register": "^7.12.1",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "coveralls": "^3.1.0",
     "dotenv": "^8.2.0",
     "eslint": "^7.13.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "sinon": "^9.2.1"
   }
 }
