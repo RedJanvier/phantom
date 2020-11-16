@@ -1,4 +1,6 @@
 import { describe } from 'mocha';
-import test from './test.test';
+import userTests from './user.test';
+import roleTests from './role.test';
 
-describe('TEST:', test);
+describe('ROLES:', roleTests);
+describe('USERS:', userTests);
